@@ -32,7 +32,7 @@ function buildDraw(n) {
     let index = n - 1;
 
     arr[index] = index % 2 === 0 ? '-' : '|';
-    result.push([...arr].join());
+    result.push([...arr].join(''));
 
     if (n === 1) return result;
 
@@ -40,7 +40,7 @@ function buildDraw(n) {
     while (counter < n) {
         arr[index - counter] = character(index - counter);
         arr[index + counter] = character(index + counter);
-        result.push([...arr].join());
+        result.push([...arr].join(''));
         counter++;
     }
 
@@ -49,7 +49,7 @@ function buildDraw(n) {
     while (counter > 0) {
         arr[index - counter] = ' ';
         arr[index + counter] = ' ';
-        result.push([...arr].join());
+        result.push([...arr].join(''));
         counter--;
     }
 
